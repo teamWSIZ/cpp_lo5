@@ -24,4 +24,11 @@ int main() {
 
   cout <<" takie same? " << (w1==w2) << endl;
   
+  //Zadanie 1:
+  // Dany jest wektor wynikow konkursu informatycznego, w postaci
+  vector<int> wynik = {1,2,1,8,3};
+  //zakładamy, że uczestnik "0" otrzymał wynik[0] punktów, uczestnik 1 wynik[1] itd.
+  //Proszę wypisać numery uczestników posortowanych w kolejności od tego, który uzyskał
+  //najwięcej punktów do tego który uzyskał najmniej.
+  
 };
