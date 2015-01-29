@@ -44,4 +44,15 @@ int main() {
   vector<pair<int, int>> W2 = {{1, 3}, {4, 5}, {5, 10}};
   //odpowiedź: tak
   
+  
+  //Zadanie3:
+  // Rozpatrzmy punkty o całkowitych współrzędnych na płaszczyźnie.
+  // Niech współrzędne punktów będą opisywane w postaci {x,y}, gdzie
+  // zawężamy się do kwadratu 0<=x,y<=100
+  // Proszę wyznaczyć największą liczbę punktów na tej płaszczyźnie, leżących
+  // na tym samym (pewnym) okręgu. Przykład: punkty {0,5},{3,4},{4,3},{5,0}
+  // leżą na okręgu o promieniu 5, natomiast punkty:
+  // {1,18},{6,17},{10,15},{15,10},{17,6},{18,1} na okręgu o promieniu sqrt(100+225)
+  //
+  // Wersja truniejsza: proszę wypisać pary punktów dla "najlepszego" okręgu.
 };
