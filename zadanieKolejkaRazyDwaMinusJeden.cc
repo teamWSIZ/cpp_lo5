@@ -15,6 +15,15 @@ typedef vector<vi> vvi;
 typedef vector<ll> vl;
 typedef pair<int,int> pii;
 
+/**
+* Zadanie: startujemy z liczby "st", i chcemy osiagnac liczbe "end";
+* w kazdym kroku z liczby "x" mozemy przejsc do "2*x" albo do "x-1". 
+* Prosze wyliczyc po jakiej najmniejszej liczbie krokow, startujc z "st" mozna 
+* osiagnac "end". 
+* 
+* Przyklad: st=4 end=7 (odp=2); st=15 end=20 (odp=6)
+*/
+
 int main() {
     int st = 15, end = 20;
     queue<int> Q;
