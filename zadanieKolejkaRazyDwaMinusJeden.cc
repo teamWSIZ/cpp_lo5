@@ -15,8 +15,6 @@ typedef vector<vi> vvi;
 typedef vector<ll> vl;
 typedef pair<int,int> pii;
 
-//http://codeforces.com/problemset/problem/520/B
-
 int main() {
     int st = 15, end = 20;
     queue<int> Q;
@@ -28,11 +26,13 @@ int main() {
         dyst[at] =1;
         cout << "sprawdzam wezel:" << at << endl;
 //        if (at==end) {
+        //todo: tu trzeba zrobic cos, co odpowiednio bedzie zwracalo dystans od "st"
 //            cout << "best=" << dist[at] << endl;
 //            break;
 //        }
         int nowy1 = at * 2;
         int nowy2 = at -1;
+        //tutaj trzeba odpowiednio zapisac nowy dystans do dyst[nowy1/2]
         if (nowy1<=100 && dyst[nowy1]==0) Q.push(nowy1);
         if (nowy2>=0 && dyst[nowy2]==0) Q.push(nowy2);
     }
