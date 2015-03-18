@@ -1,4 +1,4 @@
-// Przyklady
+// Przyklady (wersja prostsza)
 // {1,1,2,2,2,2} OK
 // {1,4,4,4,4} OK
 // {2,2,2,2} OK
@@ -6,6 +6,17 @@
 // {1,4} ERR
 // {1,2,1,2} ERR
 // {2} ERR
+
+// Wersja trudniejsza: zapytano ludzi na niktórych pozycjach, i odpowiedzieli prawdę; 
+// (0 oznacza, że nie zapytano na tej pozycji)
+// Proszę sprawdzić, czy na podstawie ich odpowiedzi da się już wyznaczyć pełny rozkład odpowiedzi w rzędzie
+
+// Przykłady:
+// {0,2}  TAK
+// {2,0,0,2} TAK
+// {0,2,2,0} NIE
+
+
 
 
 bool czyJestDobry(vector<int> dane) {
