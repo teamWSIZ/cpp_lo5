@@ -17,4 +17,13 @@ source /etc/profile.d/rvm.sh
 rvm list
 rvm install 2.3.0
 irb
+[mamy zainstalowany ruby]
+
+--> ściągnąć Ruby Mine
+--> przejść do Downloads; tar xf <nazwapliku>
+
+Instalacja rails i zarządzanie gem-ami przez rvm:
+
+https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-ubuntu-14-04-using-rvm
+
 
