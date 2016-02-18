@@ -23,7 +23,16 @@ irb
 --> przejść do Downloads; tar xf <nazwapliku>
 
 Instalacja rails i zarządzanie gem-ami przez rvm:
-
 https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-ubuntu-14-04-using-rvm
+
+Dokładniej:
+rvm gemset create test_pm
+rvm gemset use test_pm
+gem install bundler
+gem list
+[w projekcie działa bundle install]
+gem install rails -v 4.2.5.1
+
+
 
 
