@@ -1,0 +1,20 @@
+
+irb = ruby console
+
+
+Install: 
+(node, ember OK)
+dnf install nodejs
+node -v
+npm install -g bower
+npm install -g ember-cli
+dnf install java-1.8.0-openjdk
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+\curl -sSL https://get.rvm.io | bash
+
+usermod -a -G rvm <<MY_USER>>
+source /etc/profile.d/rvm.sh
+rvm list
+rvm install 2.3.0
+irb
+
