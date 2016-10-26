@@ -25,4 +25,9 @@ int main() {
    bitset<5> b(12);
    cout << b.to_string() << endl;
 
+   vector<int> ww = {2,4,6,8,10};
+   for(int u : ww) {
+     cout << u << endl;
+   }
+
 }
