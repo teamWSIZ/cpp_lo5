@@ -15,6 +15,8 @@ typedef vector<vi> vvi;
 typedef vector<ll> vl;
 typedef pair<int,int> pii;
 
+//Kompilacja: g++ -std=c++11 easy.cc
+
 int main() {
     vi w = {2,3,5,7};
     for(int i : w) {
