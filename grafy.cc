@@ -1,15 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define REP(i,n)  for(int i=0;i<(int)(n);++i)
+#define FOR(i,b,n)  for(int i=b;i<(n);++i)
+#define ALL(c) (c).begin(),(c).end()
+#define SS size()
+#define CLR(a,v) memset((a),(v), sizeof a)
+#define ST first
+#define ND second
+#define PB push_back
 typedef vector<int> vi;
-#define pb(a) push_back((a))
-#define REP(i, a, b) for (int i = (a), i##_end_ = (b); i < i##_end_; ++i)
-#define mp make_pair
-#define x first
-#define y second
-#define SZ(x) (int((x).size()))
-#define ALL(x) (x).begin(), (x).end()
-
+typedef vector<vi> vvi;
+typedef pair<int,int> pii;
 
 //Graf jest dany przez wektory "a", "b" 
 // 1) Znaleźć sąsiadów wierzchołka "int c"
@@ -47,11 +49,12 @@ int main() {
   print(a);
   vi nears = near(a, b, 2);
   print(nears);
-  //queue<int> q;
-  //q.push(11); 
-  //cout << q.size() << endl;
-  //cout << q.front() << endl;
-  //q.pop();
-  //cout << q.size() << endl;
+  queue<int> q;	//kolejka typu FIFO (jak w sklepie)
+  q.push(11); 	//wrzucenie do kolejki liczby 11
+  q.push(15); 	
+  //cout << q.size() << endl;	//sprawdzenie ile elementów w kolejce
+  //cout << q.front() << endl;	//podejrzenie pierwszego elementu 
+  //q.pop();	//usunięcie pierwszego elementu
+  cout << q.size() << endl;
 
 }
