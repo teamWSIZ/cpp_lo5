@@ -31,7 +31,7 @@ int main() {
 
   srand(111);
   int x;
-  REP(i,10) {
+  REP(i,1e6) {
     x = rand() % ROZ;
     //atX[x]++;
     ATX[x]++;
@@ -43,6 +43,7 @@ int main() {
  
   //dla c++11
   for(pair<int,int> p : ATX) {
+    if (p.second < 2) continue; 
     cout << p.first << " --> " << p.second << endl;
   }
 
