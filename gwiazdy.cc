@@ -43,10 +43,19 @@ int main() {
  
   //dla c++11
   for(pair<int,int> p : ATX) {
+    // ta mapa ma pary typu {klucz,wartosc}; klucze to int, wartosc to int
+    // p.fist to pierwszy element pary, p.second to drugi
     if (p.second < 2) continue; 
     cout << p.first << " --> " << p.second << endl;
   }
 
+  //Zadanie: zbieramy kary z pokemonami; różnych typów kart jest N
+  // (np. N=10000). Co tydzień kupujemy 10 kart, każda z nich jest
+  // losowego typu. Proszę wypisać, dla każdego tygodnia, ile różnych
+  // kart już mamy. Proszę oszacować po ilu tygodniach uzbieramy N/2 różnych
+  // kart (czyli np. 500 dla N=1000). 
+  //
+  // Sprawdzamy to dla srand(111); 
 
 }
 
