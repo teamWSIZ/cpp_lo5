@@ -25,23 +25,26 @@ typedef vector<int> vi;
 int main() {
   //int atX[1000];
   //REP(i,1000) atX[i]=0;
-
-  int ROZ = 1000; //wielkośc przedziału wspolrzędnych
-
-
-  vi atX(ROZ);
+  int ROZ = 1e9; //wielkośc przedziału wspolrzędnych
+  //vi atX(ROZ);
+  map<int,int> ATX;
 
   srand(111);
-
   int x;
   REP(i,10) {
     x = rand() % ROZ;
-    atX[x]++;
+    //atX[x]++;
+    ATX[x]++;
   }
-
-  REP(i,ROZ)
-    if (atX[i]>0)
-      cout << i << "-->" <<  atX[i] << endl;
+  //REP(i,ROZ) {
+    //if (atX[i]>0) cout << i << "-->" <<  atX[i] << endl;
+  //  if (ATX.count(i)>0) cout << i << "-->" <<  ATX[i] << endl;
+  //}
+ 
+  //dla c++11
+  for(pair<int,int> p : ATX) {
+    cout << p.first << " --> " << p.second << endl;
+  }
 
 
 }
