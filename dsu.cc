@@ -22,6 +22,20 @@ void debugContainer(T &what){
     cout << endl;
 }
 
+/**
+ * Zadanie: mamy n=10000 miast;
+ * 1000 razy wykonujemy:
+ *   u = rand() %n
+ *   v = rand() %n
+ *   jest polaczenie (u <--> v)
+ *
+ *  a) z iloma miastami polaczone jest miasto nr 5
+ *  b) ile roznych komponentow ma graf miast (komponent to graf w ktorym mozna przejsc
+       miedzy kazdym z elmentow po podanych sciezkach, niekoniecznie w jednym kroku)
+ */
+
+
+
 //DSU by bmerry
 //each: root v, par[v]=-(number_of_children)
 // ranges as array[size], 0..size-1
