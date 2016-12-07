@@ -1,0 +1,30 @@
+Struktura projektu:
+folder inc --> tam pliki *.h
+folder . (główny) --> tam pliki .cc (lub .cpp)
+-------------------
+
+kompilacja --> zamiana plików kodu na binarki (.o)
+linkowanie --> zebranie skompilowanych plików do jednego exe-ka
+
+komendy (wywoływane w folderze głównym projektu):
+g++ -c -I./inc A.cc
+g++ -c -I./inc B.cc
+g++ -c -I./inc C.cc
+
+---> w folderze głównym pokażą się pliki A.o, B.o, C.o
+
+potem:
+g++ C.o B.o A.o
+(linkuje)
+ --> pojawia się a.out (linux), lub a.exe (windows)
+
+----------------------------------------------------
+Jeśli mamy zewnętrzne biblioteki, to:
+1) trzeba ustawić "include directory", czyli gdzie jest "include" (-I)
+2) trzeba ustawić library, lub binary folder (-L); 
+
+typowa komenda (max)
+
+g++ -I<include_folders> -L<lib_folders> [files] -l<główne biblioteki, systemowe>
+
+
