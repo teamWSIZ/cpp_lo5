@@ -65,6 +65,15 @@ Point rakieta(Point& prak, Point& vrak, Point& psam, Point& vsam) {
 	return noweV;
 }
 
+
+Point killer_rocket(Point psam, Point vsam, Point prak, Point vrak) {
+	return vrak;
+}
+
+Point smart_plane(Point psam, Point vsam, Point prak, Point vrak) {
+	return vsam;
+}
+
 class Engine {
 private:
 	Point psam;
@@ -86,9 +95,29 @@ public:
 			diff.multiply(dt);
 			psam.add(diff);
 			
+			diff = vrak;
+			diff.multiply(dt);
+			prak.add(diff);
+			
+			//tu zmodyfikowac predkosci vsam, vrak
+			vrak = killer_rocket(psam, vsam, prak, vrak);
+			vsam = smart_plane(psam, vsam, prak, vrak);
+				
+			if (psam.dist(psam)<0.05) {
+				cout << "plane has shot down!" << endl;
+				return;
+			}
+			
+			//debug info
+			cout << "------------\n";
+			cout << "t=" << t << endl;
+			cout << "prak: " << prak.to_string() << endl;
+			cout << "vrak: " << vrak.to_string() << endl;
+			cout << "psam: " << psam.to_string() << endl;
+			cout << "vsam: " << vsam.to_string() << endl;
 			
 		}
-		
+		cout << "plane escaped to safety!" << endl;		
 	}
 };
 
