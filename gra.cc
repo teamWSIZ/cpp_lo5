@@ -17,42 +17,53 @@ typedef pair<int,int> pii;
 
 class Point {
 public:
-	int x; 
-	int y; 
+	//dane przechowywane przez instancje klasy Point; 
+	//odpowiada ona punktowi (lub wektorowi) na plazczyznie dwu-wymiarowej
+	double x; 
+	double y; 
 	
-	Point(int xx = 0, int yy = 0) {
+	//tworzenie punktu o zadanych koordynatach
+	Point(double xx = 0, double yy = 0) {
 		x = xx;
 		y = yy;
 	}
+	
+	//tworzenie kopii punktu
 	Point(Point& other) {
 		x = other.x;
 		y = other.y;
 	}
 	
+	//dodawanie do punktu innego punktu (dodawanie wspolrzednych)
 	void add(Point& p) {
 		x += p.x;
 		y += p.y;
 	}
 	
+	//mnozenie punktu (wektora) przez liczbe 
 	void multiply(double factor) {
 		x *= factor;
 		y *= factor;
 	}
 	
+	//zamiana danych punktu na napis gotowy do wydruku
 	string to_string() {
 		string res = "";
 		res += "{x=" + std::to_string(x) + ", y=" + std::to_string(y) + "}";
 		return res;
 	}
 	
+	//dlugosc wektora / odleglosc od srodka ukladu (punktu 0,0)
 	double len() {
-		return sqrt(0.0 + x*x+y*y);
+		return sqrt(x*x+y*y);
 	}
 	
+	//zwraca cos kata miedzy obecnym wektorem i wektorem p
 	double angle(Point& p) {
-		return (0.0 + p.x * x + p.y * y)/(len() * p.len());
+		return (p.x * x + p.y * y)/(len() * p.len());
 	}
 	
+	//odleglosc miedzy obecnym punktem i punktem p
 	double dist(Point& p) {
 		Point diff(x - p.x, y - p.y);
 		return diff.len();
@@ -66,14 +77,18 @@ Point rakieta(Point& prak, Point& vrak, Point& psam, Point& vsam) {
 }
 
 
+//ta funkcja definiuje jak ma sie zmieniac predkosc rakiety w zaleznosci od pozycji i predkosci obiektow
 Point killer_rocket(Point psam, Point vsam, Point prak, Point vrak) {
 	return vrak;
 }
 
+//ta funkcja definiuje jak ma sie zmieniac predkosc samolotu w zaleznosci od pozycji i predkosci obiektow
 Point smart_plane(Point psam, Point vsam, Point prak, Point vrak) {
 	return vsam;
 }
 
+
+//silnik do symulacji bitwy
 class Engine {
 private:
 	Point psam;
@@ -103,7 +118,7 @@ public:
 			vrak = killer_rocket(psam, vsam, prak, vrak);
 			vsam = smart_plane(psam, vsam, prak, vrak);
 				
-			if (psam.dist(psam)<0.05) {
+			if (psam.dist(prak)<0.05) {
 				cout << "plane has shot down!" << endl;
 				return;
 			}
@@ -123,7 +138,7 @@ public:
 
 
 
-
+//proby wykorzystania klasy point
 int main() {
 	Point x(1,0);
 	Point y(2,0);
