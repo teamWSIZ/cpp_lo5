@@ -15,6 +15,18 @@ typedef vector<vi> vvi;
 typedef vector<ll> vl;
 typedef pair<int,int> pii;
 
+/**
+ * Zadanie: pionek startuje z pozycji a=0; 
+ *   w każdym ruchu rzucamy kostką; wynik rzutu to k.
+ *   pionek przechodzi do pozycji "a+k"; jeśli to "6", to kończymy grę, jeśli wychodzi a+k>6, 
+ *   to pionek nie kończy gry, tylko odbija się od pola nr 6, tak, że np. 
+ *   będąc na 5, z k=3 trafiamy na 4,
+ *   będąc na 5, z k=2 trafiamy na 5.
+ *
+ *  Zadanie: wyliczyć po ilu rzutach kostką (średnio) pionek osiągnie pole 6.
+ *
+ */
+
 int main() {
  	srand(time(0));
 	int MX = 100000000;
