@@ -59,6 +59,8 @@ public:
 	/// potem drukujemy kopalnię na podstawie tej struktury:
 	/// - znak 'o' tam, gdzie ma być komnata,
 	/// - znak '.' gdzie jest miejsce puste. 
+	///
+	/// (ta funkcja jest kapkę trudniejsza...)
 	void printTheMine() {
 		//ekran; "true" oznaczać będzie komnatę
         vector<vector<bool>> screen = 
