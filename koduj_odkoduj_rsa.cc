@@ -15,6 +15,7 @@ typedef vector<vi> vvi;
 typedef vector<ll> vl;
 typedef pair<int,int> pii;
 
+//klucze na podstawie: http://eduinf.waw.pl/inf/alg/001_search/0067.php#Fazy_algorytmu_RSA
 int n = 1271;
 
 int ppow(int p, int w) {
