@@ -11,7 +11,7 @@ int SCREEN_ROLLED_UP = -SCREEN_FULL/10; //bedzie polegal na czujniku by wykryc z
 
 int DELAY = 100; //ms
 int SOUND_DISTANCE_TIMEOUT = 2000; //microseconds (2000 ~= max 20cm)
-int LIGHT_ON = 400; //wiecej -- ciemniejsze swiatlo wykrywane jako 'projektor wlaczony'
+int LIGHT_ON = 150; //wiecej -- wiecej swiatla potrzeba do wykrycia jako 'projektor wlaczony'
 int SCREEN_SOUND_DISTANCE = 10; //odleglosc od czujnika do ekranu (ekran zaslania widok czujnika)
 //sterowanie pozycja ekranu
 //uwaga: wiekszy DELAY spowoduje ze kroki sa dluzsze
@@ -21,11 +21,11 @@ int screen_dst = 0; //pozycja do ktorej chcemy aktualnie przesunac ekran (silnik
 
 
 //piny
-int PINL = 0; //analog A0
-int PINTRIG = 6; //do czujnika odległości - wysyla
-int PINECHO = 7; //do czujnika odległości - odbiera
-int PINUP = 9;    //silnik UP
-int PINDN = 8;    //silnik DOWN
+int PINL = 2; //analog A0
+int PINTRIG = 3; //do czujnika odległości - wysyla
+int PINECHO = 2; //do czujnika odległości - odbiera
+int PINUP = 6;    //silnik UP
+int PINDN = 5;    //silnik DOWN
 
 
 //sprawdz z sensora swiatla czy projektor jest wlaczony
@@ -33,7 +33,7 @@ bool projectorRunning() {
     double value = analogRead(PINL);
     Serial.print("Swiatlo:");
     Serial.println(value);
-    if (value<=LIGHT_ON) return true;
+    if (value>=LIGHT_ON) return true;
     else return false;
 }
 
@@ -132,4 +132,3 @@ void loop() {
     delay(DELAY);
 
 }
-
