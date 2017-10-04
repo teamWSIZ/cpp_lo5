@@ -46,6 +46,7 @@ vi pod;  //waga nodów pod danym
 
 vector<bool> vis;   //już odwiedzone nody
 int oblicz_wage(int rt) {
+    cout << "wchodze do " << rt << endl;
     vis[rt] = true;
     int suma_wag = 0; 
     for(int c : ch[rt]) {
@@ -54,6 +55,7 @@ int oblicz_wage(int rt) {
         }
     }
     pod[rt] = suma_wag;
+    cout << "wychodze z " << rt << endl;
     return w[rt] + suma_wag;
 }
 
@@ -70,16 +72,36 @@ int main()
     pod = vi(n);
     
     for(pii p : g) {
-        ch[p.ST].PB(p.ND);
-        ch[p.ND].PB(p.ST);
+        ch[p.ST].PB(p.ND);      //p.ST == p.first, PB == push_back
+        ch[p.ND].PB(p.ST);      
+    }
+  
+    //wypisanie informacji o nodach
+    REP(i, ch.size()) {
+        cout << "dzieci node'a " << i << endl;
+        REP(j, ch[i].size()) {
+            cout << ch[i][j] << ",";
+        }
+        cout << endl;
     }
     
+    int x=0;  //inny sposób wypisania informacji o dzieciach
+    for(vi& cc : ch) {
+        cout << "Dzieci " << (x++) << endl;
+        for(int i : cc) cout << i << ",";
+        cout << endl;
+    }
+    
+    cout << "-------------------\n";
+
     oblicz_wage(0); //startujemy przeszukiwanie grafu
     
-    REP(i,n) {
-        cout << "waga pod [" << i << "] : " << pod[i] << endl;
-    }
+//    REP(i,n) {
+//        cout << "waga pod [" << i << "] : " << pod[i] << endl;
+//    }
+    
 }
+
 
 
 
