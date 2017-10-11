@@ -59,10 +59,14 @@ void fight(CreatureGroup& attacker, CreatureGroup& defender) {
     min_dmg *= modifier;
     max_dmg *= modifier;
     //teraz mamy range demage'a, np. 22 : 33
-    
+    cout << "atakuje:" << attacker.type.type << endl;
+    cout << "count:" << attacker.count << endl;
+    cout << "demage range: [" << min_dmg << " : " << max_dmg << "] " << endl;
+
     int demage = min_dmg + (rand() % (max_dmg - min_dmg + 1));
     int total = (defender.count-1) * defender.type.hp + defender.hp_left;
 
+    cout << "generated demage:" << demage << endl;
 }
 
 
@@ -71,11 +75,15 @@ void fight(CreatureGroup& attacker, CreatureGroup& defender) {
 
 
 int main() {
+    srand(time(0));
     Creature demon("Demon", 10, 5, 2, 10, 20);  //to jest instancja kreatury
     Creature chowaniec("Chowaniec", 8, 12, 8, 5, 8);
 
-    CreatureGroup pierwsza(demon, 10, 2);
+    CreatureGroup demony(demon, 10, 2);
     CreatureGroup chowance(chowaniec, 20, 8);
+
+    fight(demony, chowance);
+    fight(chowance, demony);
 
 }
 
