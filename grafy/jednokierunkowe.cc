@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define REP(i, n)  for(int i=0;i<(int)(n);++i)
+#define FOR(i, b, n)  for(int i=b;i<(n);++i)
+#define ALL(c) (c).begin(),(c).end()
+#define SS size()
+#define PB push_back
+typedef long long ll;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef vector<set<i>> vsi;
+
+template<typename T, typename U> static void AMIN(T &x, U y) { if (y < x) x = y; }
+template<typename T, typename U> static void AMAX(T &x, U y) { if (x < y) x = y; }
+
+http://codeforces.com/contest/915/problem/D
+
+vsi nxt, prv; 
+
+int main() {
+	int n, m; cin >> n >> m; 
+	nxt = vi(n,vi());
+	prv = vi(n,vi());
+	REP(i,m) {
+		int u, v; cin >> u >> v; u--, v--;
+		nxt[u].insert(v);
+		prv[v].insert(u);
+	}
+}
+
+
+
