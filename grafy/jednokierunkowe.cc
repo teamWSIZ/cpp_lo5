@@ -19,14 +19,22 @@ template<typename T, typename U> static void AMAX(T &x, U y) { if (x < y) x = y;
 vsi nxt, prv;
 vector<int> vis;
 
+/**
+ * Przejście przez graf skierowany z wykrywaniem cykli
+ */
 
 void go(int rt) {
     cout << "wchodze do " << (rt+1) << endl;
     vis[rt] = 1;
     for(int k : nxt[rt]) {
         if (vis[k]==0) go(k);
+        if (vis[k]==1) {
+            cout << "znalazłem cykl na linii: " << (rt+1) << "->" << (k+1)
+                 << "  !!!!" << endl;
+        }
     }
     cout << "wychodze z " << (rt+1) << endl;
+    vis[rt] = 2;
 }
 
 
@@ -49,8 +57,9 @@ int main() {
     }
     cout << "---------------\n";
 
-    go(0);
-
+    REP(i,n) {
+        if (vis[i]==0) go(i);
+    }
 
 
 }
