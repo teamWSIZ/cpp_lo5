@@ -20,11 +20,25 @@ vsi nxt, prv;
 
 int main() {
     int n, m; cin >> n >> m;
-    nxt = vector(n,si());
-    prv = vector(n,si());
+    nxt = vsi(n,si());
+    prv = vsi(n,si());
     REP(i,m) {
         int u, v; cin >> u >> v; u--, v--;
         nxt[u].insert(v);
         prv[v].insert(u);
     }
+
+    REP(i,n) {
+        cout << (i+1) << " -> ";
+        for(int k : nxt[i]) cout << k << ", ";
+    }
+
+
+
 }
+
+
+
+
+
+
